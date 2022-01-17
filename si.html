@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1 class="sih1">Simple Interest</h1>
+    <form action="" onsubmit="return si();">
+        <div class="si">
+            <div>
+                Principal <br><input type="number" id="p" required>
+            </div>
+            <div style="margin-top: 10%;">
+                Time period <br><input type="number" id="t" required>
+            </div>
+            <div style="margin-top: 10%;">
+                Rate <br><input type="number" id="r" value="6">
+            </div>
+            <br >   
+            <input type="submit" value="Submit" 
+            style="font-size: 1em;background-image: linear-gradient(to bottom right,#C22ED0,#5FFAE0);
+            border-radius: 25%; padding: 2%;
+            ">
+        </div>
+        <div class="siout">
+            <div style="margin-top: 10%; margin-bottom: 0; margin-left: 10%;">
+                Interest = <input type="number" id="i" readonly>
+            </div>
+            
+            <br>
+            <div style="margin-top: 10%; margin-left: 10%; margin-bottom: 10%;">
+                Amount = <input type="number" id="a" readonly>
+            </div>
+            
+        </div>
+
+
+    </form>
+    <script type="text/javascript">
+        function si() {
+            var p = parseInt(document.getElementById("p").value);
+            var t = parseInt(document.getElementById("t").value);
+            var r = parseInt(document.getElementById("r").value);
+
+            var it = (p * r * t) / 100;
+
+            document.getElementById("i").value = it;
+            document.getElementById("a").value = it + p;
+            return false;
+        }
+    </script>
+</body>
+
+</html>

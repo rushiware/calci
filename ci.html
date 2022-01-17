@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1 class="sih1">Compound Interest</h1>
+    <form action="" onsubmit="return si();">
+        <div class="ci">
+            <div>
+                Principal amount<br><input type="number" id="pc" required>
+            </div>
+            <div style="margin-top: 10%;">
+                Monthly contribution<br><input type="number" id="mc" value="0">
+            </div>
+            <div style="margin-top: 10%;">
+                Time period <br><input type="number" id="tc" required>
+            </div>
+            <div style="margin-top: 10%;">
+                Rate <br><input type="number" id="rc" value="6">
+            </div>
+            <div style="margin-top: 10%;">
+                Compounded anually
+            </div>
+            <br >   
+            <input type="submit" value="Submit" 
+            style="font-size: 1em;background-image: linear-gradient(to bottom right,#C22ED0,#5FFAE0);
+            border-radius: 25%; padding: 2%;
+            ">
+        </div>
+        <div class="ciout">
+            <div style="margin-top: 10%; margin-bottom: 0; margin-left: 10%;">
+                Interest = <input type="number" id="ic" readonly>
+            </div>
+            
+            <br>
+            <div style="margin-top: 10%; margin-left: 10%; margin-bottom: 0%;">
+                Amount = <input type="number" id="ac" readonly>
+            </div>
+
+            <br>
+            <div style="margin-top: 10%; margin-left: 10%; margin-bottom: 10%;">
+                Invested Amount = <input type="number" id="ia" readonly>
+            </div>
+            
+        </div>
+
+    </form>
+    <script type="text/javascript">
+        function si() {
+            var pc = parseInt(document.getElementById("pc").value);
+            var mc = parseInt(document.getElementById("mc").value);
+            var tc = parseInt(document.getElementById("tc").value);
+            var rc = parseInt(document.getElementById("rc").value);
+            var tot= pc+(mc*12*tc);
+            for(var i=1;i<=tc;i++){
+                var pc=pc+((pc*rc)/100)+(mc*(12));
+            }
+            
+            document.getElementById("ic").value = pc-tot;
+            document.getElementById("ac").value = pc;
+            document.getElementById("ia").value = tot;
+            return false;
+        }
+    </script>
+</body>
+
+</html>
