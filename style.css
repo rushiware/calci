@@ -73,13 +73,13 @@ a{
 .si{
   margin-left: 7%;
   text-align: center;
-  font-size: 3em;
+  font-size: 2.2em;
   float: left;
 }
 
 .siout{
   background-image: linear-gradient(to bottom right,#9d24a9,#4dccb9);
-  font-size: 3em;
+  font-size: 2.2em;
   float: right;
   margin-top: 7%;
   margin-left: 7%;
